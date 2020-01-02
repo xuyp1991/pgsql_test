@@ -12,6 +12,7 @@ import (
 func main() {
 	defer seelog.Flush()
 	db.Init()
-	query.Query_test("XIANG4")
+	query.Query_action_from_object("XIANG4")
+	query.Query_alllink("SKU5")
 	db.CloseDB()
 }

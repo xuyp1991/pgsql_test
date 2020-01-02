@@ -19,7 +19,7 @@ type action struct {
 	Action_hash		string
 }
 
-func Query_test(object_id string) {
+func Query_action_from_object(object_id string) {
 	rows, err := db.GetDB().Query("select * from t_actions where object_id=$1", object_id)
 
 	if err != nil {
@@ -50,5 +50,4 @@ func Query_test(object_id string) {
 		seelog.Errorf("rows err in t_actions, err: %v", err)
 		return 
 	}
-
 }
