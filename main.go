@@ -13,6 +13,9 @@ func main() {
 	defer seelog.Flush()
 	db.Init()
 	query.Query_action_from_object("XIANG4")
-	query.Query_alllink("SKU5")
+	link_info,_ := query.Query_alllink("SKU5")
+	for _,info := range link_info {
+		seelog.Tracef("main get link info : %v", info)
+	}
 	db.CloseDB()
 }
